@@ -1,0 +1,318 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".activities.TenantDetailsActivity"
+    tools:showIn="@layout/activity_tenant_details"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.mikhaellopez.circularimageview.CircularImageView
+            android:id="@+id/imgContactPhoto"
+            android:layout_width="125dp"
+            android:layout_height="125dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="8dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/unit_placeholder"
+            app:civ_border="false"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/lblTenantName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"
+            app:layout_constraintEnd_toEndOf="@+id/imgContactPhoto"
+            app:layout_constraintStart_toStartOf="@+id/imgContactPhoto"
+            app:layout_constraintTop_toBottomOf="@+id/imgContactPhoto"
+            tools:text="Rosario Barrows" />
+
+        <View
+            android:id="@+id/divTenantDetailsButtonAbove"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginTop="16dp"
+            android:background="@android:color/darker_gray"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/lblTenantName" />
+
+        <Button
+            android:id="@+id/btnMessage"
+            style="@style/Widget.MaterialComponents.Button.TextButton.Icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:drawableTop="@drawable/ic_textsms_black_24dp"
+            android:onClick="tenantTextOnClick"
+            android:text="@string/btnText"
+            android:textColor="@color/colorOnBackground"
+            app:icon="@drawable/ic_textsms_black_24dp"
+            app:iconPadding="8dp"
+            app:iconTint="@color/colorSecondary"
+            app:layout_constraintEnd_toStartOf="@+id/btnCall"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/divTenantDetailsButtonAbove" />
+
+        <Button
+            android:id="@+id/btnCall"
+            style="@style/Widget.MaterialComponents.Button.TextButton.Icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:onClick="tenantCallOnClick"
+            android:text="@string/btnCall"
+            android:textColor="@color/colorOnBackground"
+            app:icon="@drawable/ic_phone_black_24dp"
+            app:iconPadding="8dp"
+            app:iconTint="@color/colorSecondary"
+            app:layout_constraintBottom_toBottomOf="@+id/btnMessage"
+            app:layout_constraintEnd_toStartOf="@id/btnEmail"
+            app:layout_constraintStart_toEndOf="@id/btnMessage"
+            app:layout_constraintTop_toTopOf="@+id/btnMessage" />
+
+        <Button
+            android:id="@+id/btnEmail"
+            style="@style/Widget.MaterialComponents.Button.TextButton.Icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:onClick="emailTenantOnClick"
+            android:text="@string/btnEmail"
+            android:textColor="@color/colorOnBackground"
+            app:icon="@drawable/ic_email_black_24dp"
+            app:iconPadding="8dp"
+            app:iconTint="@color/colorSecondary"
+            app:layout_constraintBottom_toBottomOf="@+id/btnCall"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/btnCall"
+            app:layout_constraintTop_toTopOf="@+id/btnCall" />
+
+        <View
+            android:id="@+id/divTenantDetailsButtonBelow"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginTop="8dp"
+            android:background="@android:color/darker_gray"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btnMessage" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardTenantPhone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:focusable="true"
+            app:layout_constraintTop_toBottomOf="@+id/divTenantDetailsButtonBelow">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/lblTenantPhone"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="8dp"
+                    android:textSize="18sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/imgPhoneIcon"
+                    app:layout_constraintEnd_toStartOf="@+id/ibtnCallTenant"
+                    app:layout_constraintStart_toEndOf="@+id/imgPhoneIcon"
+                    app:layout_constraintTop_toTopOf="@+id/imgPhoneIcon"
+                    tools:text="425-234-1235" />
+
+                <ImageButton
+                    android:id="@+id/ibtnTextTenant"
+                    style="@style/IconButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginBottom="8dp"
+                    android:contentDescription="@string/imgBtnTextHint"
+                    android:tint="@color/colorSecondary"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/ic_textsms_black_24dp" />
+
+                <ImageButton
+                    android:id="@+id/ibtnCallTenant"
+                    style="@style/IconButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:contentDescription="@string/imgBtnCallDescription"
+                    android:tint="@color/colorSecondary"
+                    app:layout_constraintBottom_toBottomOf="@+id/ibtnTextTenant"
+                    app:layout_constraintEnd_toStartOf="@+id/ibtnTextTenant"
+                    app:layout_constraintTop_toTopOf="@+id/ibtnTextTenant"
+                    app:srcCompat="@drawable/ic_phone_black_24dp" />
+
+                <ImageView
+                    android:id="@+id/imgPhoneIcon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:tint="@android:color/darker_gray"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/ic_phone_black_24dp"
+                    android:contentDescription="@string/descPhoneIcon" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardTenantEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:focusable="true"
+            app:layout_constraintTop_toBottomOf="@+id/cardTenantPhone">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/lblTenantEmail"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="8dp"
+                    android:textSize="18sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/imgEmailIcon"
+                    app:layout_constraintEnd_toStartOf="@+id/ibtnEmailTenant"
+                    app:layout_constraintStart_toEndOf="@+id/imgEmailIcon"
+                    app:layout_constraintTop_toTopOf="@+id/imgEmailIcon"
+                    app:layout_constraintVertical_bias="0.0"
+                    tools:text="testemail@gmail.com" />
+
+                <ImageButton
+                    android:id="@+id/ibtnEmailTenant"
+                    style="@style/IconButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginBottom="8dp"
+                    android:contentDescription="@string/imgBtnTextDescription"
+                    android:tint="@color/colorSecondary"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/ic_email_black_24dp" />
+
+                <ImageView
+                    android:id="@+id/imgEmailIcon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:tint="@android:color/darker_gray"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/ic_email_black_24dp"
+                    android:contentDescription="@string/descEmailIcon"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/lblTenantHouse"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/lblHousePrompt"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cardTenantEmail" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardTenantHouse"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?android:attr/selectableItemBackground"
+            app:cardElevation="3dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/lblTenantHouse"
+            app:layout_constraintVertical_bias="0.6">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/lblTenantHouseName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="Red House" />
+
+                <TextView
+                    android:id="@+id/lblTenantHouseAddress"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginBottom="8dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/imgTenantHousePhoto"
+                    app:layout_constraintStart_toStartOf="@+id/lblTenantHouseName"
+                    app:layout_constraintTop_toBottomOf="@id/lblTenantHouseName"
+                    tools:text="1234 Test ST SE Bothell, WA 98201" />
+
+                <ImageView
+                    android:id="@+id/imgTenantHousePhoto"
+                    android:layout_width="137dp"
+                    android:layout_height="0dp"
+                    android:contentDescription="@string/descUnitPhoto"
+                    android:scaleType="centerCrop"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/unit_placeholder" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

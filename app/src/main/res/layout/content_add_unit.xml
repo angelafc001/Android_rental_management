@@ -1,0 +1,349 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".activities.AddUnitActivity"
+    tools:showIn="@layout/activity_add_unit">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp">
+
+        <ImageButton
+            android:id="@+id/ibtnPhoto"
+            android:layout_width="0dp"
+            android:layout_height="200dp"
+            android:background="@color/colorBackground"
+            android:contentDescription="@string/descUnitPhoto"
+            android:onClick="ibtnPhotoOnClick"
+            android:scaleType="centerCrop"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/unit_placeholder" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilNewUnitName"
+            style="@style/AppTheme.TextInputLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:hint="@string/strUnitNameHint"
+            app:hintAnimationEnabled="true"
+            app:hintEnabled="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ibtnPhoto"
+            app:passwordToggleEnabled="false">
+
+              <com.google.android.material.textfield.TextInputEditText
+                  style="@style/AppTheme.TextInputEditText"
+                  android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:inputType="textCapWords" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/prmtType"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="8dp"
+            android:text="@string/prmtUnitType"
+            app:layout_constraintEnd_toStartOf="@+id/spnUnitType"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="@+id/tilNewUnitName"
+            app:layout_constraintTop_toBottomOf="@+id/tilNewUnitName" />
+
+        <Spinner
+            android:id="@+id/spnUnitType"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_marginEnd="16dp"
+            android:textSize="@dimen/textSize"
+            app:layout_constraintBottom_toBottomOf="@+id/prmtType"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/prmtType"
+            app:layout_constraintTop_toTopOf="@+id/prmtType" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilNewUnitAddress"
+            style="@style/AppTheme.TextInputLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="16dp"
+            android:hint="@string/strUnitAddressHint"
+            app:hintAnimationEnabled="true"
+            app:hintEnabled="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/prmtType"
+            app:passwordToggleEnabled="false">
+
+              <com.google.android.material.textfield.TextInputEditText
+                  style="@style/AppTheme.TextInputEditText"
+                  android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:inputType="textPostalAddress" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilNewUnitAddressTwo"
+            style="@style/AppTheme.TextInputLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:hint="@string/strUnitAddressLine2Hint"
+            app:hintAnimationEnabled="true"
+            app:hintEnabled="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tilNewUnitAddress"
+            app:passwordToggleEnabled="false">
+
+              <com.google.android.material.textfield.TextInputEditText
+                  style="@style/AppTheme.TextInputEditText"
+                  android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:inputType="textPostalAddress" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilNewUnitCity"
+            style="@style/AppTheme.TextInputLayout"
+            android:layout_width="0dp"
+            android:layout_height="58dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:hint="@string/strUnitCityHint"
+            app:hintAnimationEnabled="true"
+            app:hintEnabled="true"
+            app:layout_constraintEnd_toStartOf="@+id/tilNewUnitState"
+            app:layout_constraintHorizontal_chainStyle="spread_inside"
+            app:layout_constraintHorizontal_weight="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tilNewUnitAddressTwo"
+            app:passwordToggleEnabled="false">
+
+              <com.google.android.material.textfield.TextInputEditText
+                  style="@style/AppTheme.TextInputEditText"
+                  android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:inputType="textCapWords" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilNewUnitState"
+            style="@style/AppTheme.TextInputLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:hint="@string/strUnitStateHint"
+            app:hintAnimationEnabled="true"
+            app:hintEnabled="true"
+            app:layout_constraintBottom_toBottomOf="@id/tilNewUnitCity"
+            app:layout_constraintEnd_toStartOf="@+id/tilNewUnitZip"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintHorizontal_weight="0.2"
+            app:layout_constraintStart_toEndOf="@+id/tilNewUnitCity"
+            app:layout_constraintTop_toTopOf="@+id/tilNewUnitCity"
+            app:passwordToggleEnabled="false">
+
+              <com.google.android.material.textfield.TextInputEditText
+                  style="@style/AppTheme.TextInputEditText"
+                  android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:inputType="textCapCharacters" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilNewUnitZip"
+            style="@style/AppTheme.TextInputLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:hint="@string/strUnitZipHint"
+            app:hintAnimationEnabled="true"
+            app:hintEnabled="true"
+            app:layout_constraintBottom_toBottomOf="@id/tilNewUnitCity"
+            app:layout_constraintEnd_toEndOf="@+id/tilNewUnitAddressTwo"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintHorizontal_weight="0.3"
+            app:layout_constraintStart_toEndOf="@+id/tilNewUnitState"
+            app:layout_constraintTop_toTopOf="@+id/tilNewUnitCity"
+            app:passwordToggleEnabled="false">
+
+            <com.google.android.material.textfield.TextInputEditText
+                style="@style/AppTheme.TextInputEditText"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:inputType="number" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilNewUnitBeds"
+            style="@style/AppTheme.TextInputLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="24dp"
+            android:hint="@string/strUnitBedsHint"
+            app:hintAnimationEnabled="true"
+            app:hintEnabled="true"
+            app:layout_constraintEnd_toStartOf="@+id/tilNewUnitBaths"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintHorizontal_chainStyle="spread_inside"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tilNewUnitCity"
+            app:passwordToggleEnabled="false">
+
+              <com.google.android.material.textfield.TextInputEditText
+                  style="@style/AppTheme.TextInputEditText"
+                  android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:inputType="number" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilNewUnitBaths"
+            style="@style/AppTheme.TextInputLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:hint="@string/strUnitBathsHint"
+            app:hintAnimationEnabled="true"
+            app:hintEnabled="true"
+            app:layout_constraintBottom_toBottomOf="@+id/tilNewUnitBeds"
+            app:layout_constraintEnd_toStartOf="@+id/tilNewUnitFloorSize"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/tilNewUnitBeds"
+            app:layout_constraintTop_toTopOf="@+id/tilNewUnitBeds"
+            app:passwordToggleEnabled="false">
+
+              <com.google.android.material.textfield.TextInputEditText
+                  style="@style/AppTheme.TextInputEditText"
+                  android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:inputType="numberDecimal" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilNewUnitFloorSize"
+            style="@style/AppTheme.TextInputLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:hint="@string/strUnitFloorSizeHint"
+            app:hintAnimationEnabled="true"
+            app:hintEnabled="true"
+            app:layout_constraintBottom_toBottomOf="@+id/tilNewUnitBeds"
+            app:layout_constraintEnd_toEndOf="@+id/tilNewUnitZip"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/tilNewUnitBaths"
+            app:layout_constraintTop_toTopOf="@+id/tilNewUnitBeds"
+            app:passwordToggleEnabled="false">
+
+              <com.google.android.material.textfield.TextInputEditText
+                  style="@style/AppTheme.TextInputEditText"
+                  android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:inputType="number" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilNewUnitYearBuilt"
+            style="@style/AppTheme.TextInputLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:hint="@string/strUnitYearBuiltHint"
+            app:hintAnimationEnabled="true"
+            app:hintEnabled="true"
+            app:layout_constraintEnd_toEndOf="@+id/tilNewUnitFloorSize"
+            app:layout_constraintStart_toStartOf="@+id/tilNewUnitBeds"
+            app:layout_constraintTop_toBottomOf="@+id/tilNewUnitBeds"
+            app:passwordToggleEnabled="false">
+
+              <com.google.android.material.textfield.TextInputEditText
+                  style="@style/AppTheme.TextInputEditText"
+                  android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:inputType="number" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilNewUnitRentAmount"
+            style="@style/AppTheme.TextInputLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="16dp"
+            android:hint="@string/strUnitRentHint"
+            app:hintAnimationEnabled="true"
+            app:hintEnabled="true"
+            app:layout_constraintEnd_toStartOf="@+id/tilNewUnitRentDue"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="@+id/tilNewUnitYearBuilt"
+            app:layout_constraintTop_toBottomOf="@+id/tilNewUnitYearBuilt"
+            app:passwordToggleEnabled="false">
+
+              <com.google.android.material.textfield.TextInputEditText
+                  style="@style/AppTheme.TextInputEditText"
+                  android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:inputType="numberDecimal" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilNewUnitRentDue"
+            style="@style/AppTheme.TextInputLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:hint="@string/strUnitRentDueHint"
+            app:hintAnimationEnabled="true"
+            app:hintEnabled="true"
+            app:layout_constraintBottom_toBottomOf="@+id/tilNewUnitRentAmount"
+            app:layout_constraintEnd_toEndOf="@+id/tilNewUnitYearBuilt"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/tilNewUnitRentAmount"
+            app:layout_constraintTop_toTopOf="@+id/tilNewUnitRentAmount"
+            app:passwordToggleEnabled="false">
+
+              <com.google.android.material.textfield.TextInputEditText
+                  style="@style/AppTheme.TextInputEditText"
+                  android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:inputType="number" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/btnSave"
+            android:layout_width="0dp"
+            android:layout_height="51dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="8dp"
+            android:onClick="btnAddUnitSaveOnClick"
+            android:text="@string/strSave"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tilNewUnitRentAmount" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

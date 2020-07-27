@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".activities.EditLandlordProfileActivity"
+    tools:showIn="@layout/activity_edit_landlord_profile">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.mikhaellopez.circularimageview.CircularImageView
+            android:id="@+id/imgLandlordPhoto"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_marginTop="16dp"
+            android:contentDescription="@string/landlord_nav_header_description"
+            android:onClick="imgLandlordPhotoOnClick"
+            android:scaleType="centerCrop"
+            android:src="@drawable/unit_placeholder"
+            app:civ_border="false"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/txtLandlordFirstName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="8dp"
+            android:hint="@string/strFirst_Name"
+            android:importantForAutofill="no"
+            android:inputType="text"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toBottomOf="@+id/txtLandlordLastName"
+            app:layout_constraintEnd_toStartOf="@+id/txtLandlordLastName"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imgLandlordPhoto"
+            tools:targetApi="o" />
+
+        <EditText
+            android:id="@+id/txtLandlordLastName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="92dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="32dp"
+            android:hint="@string/strLastName"
+            android:inputType="text"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/txtLandlordFirstName"
+            app:layout_constraintTop_toBottomOf="@+id/imgLandlordPhoto"
+            android:importantForAutofill="no"
+            tools:targetApi="o" />
+
+        <LinearLayout
+            android:id="@+id/layMobile"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtLandlordFirstName">
+
+            <TextView
+                android:id="@+id/prmtFloorSize"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/text_margin"
+                android:text="@string/strMobile"
+                android:textSize="@dimen/textSize" />
+
+            <EditText
+                android:id="@+id/txtMobilePhone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/text_margin"
+                android:hint="@string/strPhoneNumberSample"
+                android:inputType="phone"
+                android:textSize="@dimen/textSize"
+                tools:layout_editor_absoluteX="86dp"
+                tools:layout_editor_absoluteY="0dp"
+                android:importantForAutofill="no"
+                tools:targetApi="o" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/layEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toBottomOf="@id/horizontalLine3"
+            app:layout_constraintBottom_toTopOf="@id/horizontalLine2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/text_margin"
+                android:text="@string/strEmail"
+                android:textSize="@dimen/textSize" />
+
+            <EditText
+                android:id="@+id/lblEmail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/text_margin"
+                android:hint="@string/emailHint"
+                android:inputType="textEmailAddress"
+                android:text="@string/strEmailSample"
+                android:textSize="@dimen/textSize"
+                android:importantForAutofill="no"
+                tools:targetApi="o" />
+
+        </LinearLayout>
+
+        <View
+            android:id="@+id/horizontalLine1"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/browser_actions_title_color"
+            app:layout_constraintBottom_toTopOf="@+id/layMobile"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <View
+            android:id="@+id/horizontalLine2"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/browser_actions_title_color"
+            app:layout_constraintBottom_toTopOf="@id/btnSave"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/layEmail" />
+
+        <View
+            android:id="@+id/horizontalLine3"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginStart="96dp"
+            android:background="@color/browser_actions_title_color"
+            app:layout_constraintBottom_toTopOf="@id/layEmail"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/layMobile" />
+
+
+        <Button
+            android:id="@+id/btnSave"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:background="@color/colorPrimary"
+            android:onClick="btnSaveOnClick"
+            android:text="@string/strSave"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/horizontalLine2" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

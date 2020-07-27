@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/navUnitList"
+            android:icon="@drawable/ic_home_black_24dp"
+            android:title="@string/strUnits" />
+        <item
+            android:id="@+id/navTenantList"
+            android:icon="@drawable/ic_people_black_24dp"
+            android:title="@string/strTenants" />
+        <item
+            android:id="@+id/navRepairRequestList"
+            android:icon="@drawable/ic_build_black_24dp"
+            android:title="@string/strRepairRequests" />
+    </group>
+
+    <group
+        android:checkableBehavior="none"
+        android:enabled="true">
+        <item
+            android:id="@+id/navLogout"
+            android:title="@string/strLogout" />
+    </group>
+</menu>

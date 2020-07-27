@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_myUnit"
+            android:icon="@drawable/ic_home_black_24dp"
+            android:title="@string/strMyUnit"/>
+
+        <item
+            android:id="@+id/nav_editProfile"
+            android:icon="@drawable/ic_edit_black_24dp"
+            android:title="@string/edit_profile" />
+
+        <item
+            android:id="@+id/nav_landlordContact"
+            android:icon="@drawable/ic_people_black_24dp"
+            android:title="@string/strLandlordContact" />
+
+        <item
+            android:id="@+id/nav_requestRepair"
+            android:icon="@drawable/ic_build_black_24dp"
+            android:title="@string/strRequestRepair" />
+    </group>
+
+    <group
+        android:checkableBehavior="none"
+        android:enabled="true">
+        <item
+            android:id="@+id/navLogout"
+            android:title="@string/strLogout" />
+    </group>
+
+</menu>

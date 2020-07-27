@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="vak.rentalmanagement">
+
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="true" />
+
+    <uses-permission
+        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        android:maxSdkVersion="18" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.STORAGE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        tools:ignore="AllowBackup,GoogleAppIndexingWarning">
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="vak.rentalmanagement.android.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+
+        <activity
+            android:name=".activities.LandlordBaseActivity"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".activities.TenantProfileActivity"
+            android:label="Profile"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".activities.TenantBaseActivity"
+            android:label="@string/titleSummary"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".activities.RepairRequestActivity"
+            android:label="@string/titleNewRepairRequest"
+            android:parentActivityName=".activities.TenantBaseActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="vak.rentalmanagement.activities.TenantBaseActivity" />
+        </activity>
+        <activity
+            android:name=".activities.UnitDetailsActivity"
+            android:label="@string/title_activity_unit_details"
+            android:parentActivityName=".activities.LandlordBaseActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".activities.LandlordBaseActivity" />
+            <meta-data
+                android:name="android.app.search"
+                android:resource="@xml/searchable" />
+        </activity>
+        <activity
+            android:name=".activities.BaseActivity"
+            android:theme="@style/AppTheme.Launcher">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activities.TenantEditActivity"
+            android:label="Edit Profile"
+            android:parentActivityName=".activities.TenantProfileActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="vak.rentalmanagement.activities.TenantProfileActivity" />
+        </activity>
+        <activity
+            android:name=".activities.TenantUnitDetailsActivity"
+            android:label="Unit Details"
+            android:parentActivityName=".activities.TenantBaseActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="vak.rentalmanagement.activities.TenantBaseActivity" />
+        </activity>
+        <activity
+            android:name=".activities.TenantsLandlordDetails"
+            android:label="Landlord Details"
+            android:parentActivityName=".activities.TenantBaseActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="vak.rentalmanagement.activities.TenantBaseActivity" />
+        </activity>
+        <activity
+            android:name=".activities.EditUnitActivity"
+            android:label="@string/title_activity_edit_unit"
+            android:parentActivityName=".activities.UnitDetailsActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="vak.rentalmanagement.activities.UnitDetailsActivity" />
+        </activity>
+        <activity
+            android:name=".activities.AddTenantActivity"
+            android:label="@string/title_activity_add_tenant"
+            android:parentActivityName=".activities.EditUnitActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="vak.rentalmanagement.activities.EditUnitActivity" />
+        </activity>
+        <activity
+            android:name=".activities.AddUnitActivity"
+            android:label="@string/title_activity_add_unit"
+            android:parentActivityName=".activities.LandlordBaseActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="vak.rentalmanagement.activities.LandlordBaseActivity" />
+        </activity>
+        <activity
+            android:name=".activities.LandlordProfileActivity"
+            android:label="@string/title_activity_landlord_profile"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".activities.EditLandlordProfileActivity"
+            android:label="@string/title_activity_edit_landlord_profile"
+            android:parentActivityName=".activities.LandlordProfileActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="vak.rentalmanagement.activities.LandlordProfileActivity" />
+        </activity>
+        <activity
+            android:name=".activities.RequestDetailsActivity"
+            android:label="@string/title_activity_request_details"
+            android:parentActivityName=".activities.LandlordBaseActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="vak.rentalmanagement.activities.LandlordBaseActivity" />
+        </activity>
+        <activity
+            android:name=".activities.TenantRequestDetailsActivity"
+            android:label="@string/title_activity_request_details"
+            android:parentActivityName=".activities.TenantBaseActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="vak.rentalmanagement.activities.TenantBaseActivity" />
+        </activity>
+        <activity
+            android:name=".activities.TenantDetailsActivity"
+            android:label="@string/title_activity_tenant_details"
+            android:parentActivityName=".activities.LandlordBaseActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="vak.rentalmanagement.activities.LandlordBaseActivity" />
+        </activity>
+        <activity
+            android:name=".activities.NewUserActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".activities.TenantBaseActivityNew"
+            android:label="@string/strNewTenant" />
+    </application>
+
+</manifest>

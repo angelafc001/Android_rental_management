@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cardTenant"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:clickable="true"
+    android:focusable="true"
+    android:layout_marginBottom="1dp"
+    android:foreground="?android:attr/selectableItemBackground">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.mikhaellopez.circularimageview.CircularImageView
+            android:id="@+id/imgContactPhoto"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/unit_placeholder"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/lblContactName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="8dp"
+            android:text="@string/lblTenantSample1"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="@+id/imgContactPhoto"
+            app:layout_constraintEnd_toStartOf="@+id/ibtnCall"
+            app:layout_constraintStart_toEndOf="@+id/imgContactPhoto"
+            app:layout_constraintTop_toTopOf="@+id/imgContactPhoto"
+            tools:text="Rosario Barrows" />
+
+        <ImageButton
+            android:id="@+id/ibtnMessage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="8dp"
+            android:background="?android:selectableItemBackground"
+            android:contentDescription="@string/imgBtnCall"
+            android:padding="12dp"
+            android:tint="@color/colorSecondary"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_textsms_black_24dp" />
+
+        <ImageButton
+            android:id="@+id/ibtnCall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="1dp"
+            android:background="?android:selectableItemBackground"
+            android:contentDescription="@string/imgBtnCallDescription"
+            android:padding="12dp"
+            android:tint="@color/colorSecondary"
+            app:layout_constraintBottom_toBottomOf="@+id/ibtnMessage"
+            app:layout_constraintEnd_toStartOf="@+id/ibtnMessage"
+            app:layout_constraintTop_toTopOf="@+id/ibtnMessage"
+            app:srcCompat="@drawable/ic_phone_black_24dp" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>

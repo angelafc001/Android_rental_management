@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".activities.RequestDetailsActivity"
+    tools:showIn="@layout/activity_request_details">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        app:cardBackgroundColor="@color/colorSurface"
+        app:cardCornerRadius="5dp"
+        app:cardElevation="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/lblRequestDetailsRoom"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:textAppearance="@style/AppTheme.TitleStyle"
+                android:textColor="@color/colorOnSurface"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Kitchen" />
+
+            <TextView
+                android:id="@+id/prmtRequestPriority"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@string/lblPriorityPrompt"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                app:layout_constraintStart_toStartOf="@+id/lblRequestDetailsRoom"
+                app:layout_constraintTop_toBottomOf="@+id/lblRequestDetailsRoom" />
+
+            <TextView
+                android:id="@+id/prmtRequestDetailsBy"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@string/lblByPrompt"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                app:layout_constraintStart_toStartOf="@+id/prmtRequestPriority"
+                app:layout_constraintTop_toBottomOf="@+id/prmtRequestPriority" />
+
+            <TextView
+                android:id="@+id/prmtRequestDetailsStatus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@string/prmtStatus"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                app:layout_constraintStart_toStartOf="@+id/prmtRequestDetailsBy"
+                app:layout_constraintTop_toBottomOf="@+id/prmtRequestDetailsBy" />
+
+            <TextView
+                android:id="@+id/lblRequestDetailsPriority"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toBottomOf="@+id/prmtRequestPriority"
+                app:layout_constraintStart_toEndOf="@+id/prmtRequestPriority"
+                app:layout_constraintTop_toTopOf="@+id/prmtRequestPriority"
+                tools:text="!!!" />
+
+            <TextView
+                android:id="@+id/lblRequestDetailsBy"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toBottomOf="@+id/prmtRequestDetailsBy"
+                app:layout_constraintEnd_toStartOf="@+id/imgRequestDetailsPhoto"
+                app:layout_constraintStart_toEndOf="@+id/prmtRequestDetailsBy"
+                app:layout_constraintTop_toTopOf="@+id/prmtRequestDetailsBy"
+                tools:text="Rosario Barrows" />
+
+            <ImageView
+                android:id="@+id/imgRequestDetailsPhoto"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:contentDescription="@string/descRequestPhoto"
+                android:scaleType="centerCrop"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/unit_placeholder" />
+
+            <TextView
+                android:id="@+id/lblRequestDetailsDescription"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                app:layout_constraintEnd_toEndOf="@+id/imgRequestDetailsPhoto"
+                app:layout_constraintStart_toStartOf="@+id/lblRequestDetailsRoom"
+                app:layout_constraintTop_toBottomOf="@+id/prgRequestDetailsStatus"
+                tools:text="This is a short description about the problem that will eventually become cut off and show three dots like so  and it will continue to go on and on and on and on" />
+
+            <TextView
+                android:id="@+id/lblRequestDetailsStatus"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toBottomOf="@+id/prmtRequestDetailsStatus"
+                app:layout_constraintEnd_toStartOf="@+id/imgRequestDetailsPhoto"
+                app:layout_constraintStart_toEndOf="@+id/prmtRequestDetailsStatus"
+                app:layout_constraintTop_toTopOf="@+id/prmtRequestDetailsStatus"
+                tools:text="Viewed" />
+
+            <ProgressBar
+                android:id="@+id/prgRequestDetailsStatus"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:scaleY="2.0"
+                app:layout_constraintEnd_toEndOf="@+id/imgRequestDetailsPhoto"
+                app:layout_constraintStart_toStartOf="@+id/prmtRequestDetailsStatus"
+                app:layout_constraintTop_toBottomOf="@+id/prmtRequestDetailsStatus" />
+
+            <ImageButton
+                android:id="@+id/ibtnRequestDetailsBack"
+                style="@style/Widget.MaterialComponents.Button.TextButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:tint="@color/colorOnSurface"
+                app:layout_constraintEnd_toStartOf="@+id/btnRequetsDetailsNext"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintHorizontal_chainStyle="packed"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/lblRequestDetailsDescription"
+                app:srcCompat="@drawable/ic_undo_black_24dp"
+                android:contentDescription="@string/descUndoButton" />
+
+            <Button
+                android:id="@+id/btnRequetsDetailsNext"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/ibtnRequestDetailsBack"
+                app:layout_constraintTop_toBottomOf="@+id/lblRequestDetailsDescription"
+                tools:text="Approve" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

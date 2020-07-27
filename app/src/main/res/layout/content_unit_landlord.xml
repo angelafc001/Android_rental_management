@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".activities.TenantsLandlordDetails"
+    tools:showIn="@layout/activity_unit_landlord"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.mikhaellopez.circularimageview.CircularImageView
+            android:id="@+id/imgContactPhoto"
+            android:layout_width="125dp"
+            android:layout_height="125dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="8dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/unit_placeholder"
+            app:civ_border="false"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/lblLandlordDetailsName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            app:layout_constraintEnd_toEndOf="@+id/imgContactPhoto"
+            app:layout_constraintStart_toStartOf="@+id/imgContactPhoto"
+            app:layout_constraintTop_toBottomOf="@+id/imgContactPhoto"
+            tools:text="Rosario Barrows" />
+
+        <View
+            android:id="@+id/divLandlordDetailsTop"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginTop="16dp"
+            android:background="@android:color/darker_gray"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/lblLandlordDetailsName" />
+
+        <Button
+            android:id="@+id/btnMessage"
+            style="@style/Widget.MaterialComponents.Button.TextButton.Icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:onClick="btnMessageOnClick"
+            android:text="@string/btnText"
+            android:textColor="@color/colorOnBackground"
+            app:icon="@drawable/ic_textsms_black_24dp"
+            app:iconPadding="8dp"
+            app:iconTint="@color/colorSecondary"
+            app:layout_constraintEnd_toStartOf="@+id/btnCall"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/divLandlordDetailsTop" />
+
+        <Button
+            android:id="@+id/btnCall"
+            style="@style/Widget.MaterialComponents.Button.TextButton.Icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:onClick="btnCallOnClick"
+            android:text="@string/btnCall"
+            android:textColor="@color/colorOnBackground"
+            app:icon="@drawable/ic_phone_black_24dp"
+            app:iconPadding="8dp"
+            app:iconTint="@color/colorSecondary"
+            app:layout_constraintBottom_toBottomOf="@+id/btnMessage"
+            app:layout_constraintEnd_toStartOf="@id/btnEmail"
+            app:layout_constraintStart_toEndOf="@id/btnMessage"
+            app:layout_constraintTop_toTopOf="@+id/btnMessage" />
+
+        <Button
+            android:id="@+id/btnEmail"
+            style="@style/Widget.MaterialComponents.Button.TextButton.Icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:onClick="emailLandlordOnClick"
+            android:text="@string/btnEmail"
+            android:textColor="@color/colorOnBackground"
+            app:icon="@drawable/ic_email_black_24dp"
+            app:iconPadding="8dp"
+            app:iconTint="@color/colorSecondary"
+            app:layout_constraintBottom_toBottomOf="@+id/btnCall"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/btnCall"
+            app:layout_constraintTop_toTopOf="@+id/btnCall" />
+
+        <View
+            android:id="@+id/divLandlordDetailsBelow"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginTop="8dp"
+            android:background="@android:color/darker_gray"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btnMessage" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardLandlordDetailsPhone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:focusable="true"
+            app:layout_constraintTop_toBottomOf="@+id/divLandlordDetailsBelow">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/lblLandlordDetailsphone"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="8dp"
+                    android:textIsSelectable="true"
+                    android:textSize="18sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/imgPhoneIcon"
+                    app:layout_constraintEnd_toStartOf="@+id/ibtnCallLandlord"
+                    app:layout_constraintStart_toEndOf="@+id/imgPhoneIcon"
+                    app:layout_constraintTop_toTopOf="@+id/imgPhoneIcon"
+                    tools:text="425-234-1235" />
+
+                <ImageButton
+                    android:id="@+id/ibtnTextLandlord"
+                    style="@style/IconButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginBottom="8dp"
+                    android:contentDescription="@string/imgBtnTextDescription"
+                    android:onClick="btnMessageOnClick"
+                    android:tint="@color/colorSecondary"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/ic_textsms_black_24dp" />
+
+                <ImageButton
+                    android:id="@+id/ibtnCallLandlord"
+                    style="@style/IconButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:contentDescription="@string/imgBtnCallDescription"
+                    android:onClick="btnCallOnClick"
+                    android:tint="@color/colorSecondary"
+                    app:layout_constraintBottom_toBottomOf="@+id/ibtnTextLandlord"
+                    app:layout_constraintEnd_toStartOf="@+id/ibtnTextLandlord"
+                    app:layout_constraintTop_toTopOf="@+id/ibtnTextLandlord"
+                    app:srcCompat="@drawable/ic_phone_black_24dp" />
+
+                <ImageView
+                    android:id="@+id/imgPhoneIcon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:tint="@android:color/darker_gray"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/ic_phone_black_24dp"
+                    android:contentDescription="@string/descPhoneIcon"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:focusable="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cardLandlordDetailsPhone">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/lblLandlordDetailsEmail"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="8dp"
+                    android:textIsSelectable="true"
+                    android:textSize="18sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/imgEmailIcon"
+                    app:layout_constraintEnd_toStartOf="@+id/ibtnEmailLandlord"
+                    app:layout_constraintStart_toEndOf="@+id/imgEmailIcon"
+                    app:layout_constraintTop_toTopOf="@+id/imgEmailIcon"
+                    app:layout_constraintVertical_bias="0.0"
+                    tools:text="testemail@gmail.com" />
+
+                <ImageButton
+                    android:id="@+id/ibtnEmailLandlord"
+                    style="@style/IconButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginBottom="8dp"
+                    android:contentDescription="@string/imgBtnTextDescription"
+                    android:onClick="emailLandlordOnClick"
+                    android:tint="@color/colorSecondary"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/ic_email_black_24dp" />
+
+                <ImageView
+                    android:id="@+id/imgEmailIcon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:contentDescription="@string/descEmailIcon"
+                    android:tint="@android:color/darker_gray"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/ic_email_black_24dp" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

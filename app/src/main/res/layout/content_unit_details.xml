@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".activities.UnitDetailsActivity"
+    tools:showIn="@layout/activity_unit_details">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!--<ImageView
+            android:id="@+id/imgLandlordPhoto"
+            android:layout_width="0dp"
+            android:layout_height="200dp"
+            android:background="@color/colorPrimaryDark"
+            android:contentDescription="@string/imgPhotoDescription"
+            android:scaleType="centerCrop"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/unit_placeholder" />-->
+
+        <TextView
+            android:id="@+id/prmtUnitName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/prmtUnitName"
+            android:textSize="@dimen/textSize"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/txtTenantFirstName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:textSize="@dimen/textSize"
+            app:layout_constraintBottom_toBottomOf="@+id/prmtUnitName"
+            app:layout_constraintStart_toEndOf="@+id/prmtUnitName"
+            app:layout_constraintTop_toTopOf="@+id/prmtUnitName"
+            app:layout_constraintVertical_bias="1.0"
+            tools:text="Red House" />
+
+        <TextView
+            android:id="@+id/prmtType"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/prmtUnitType"
+            android:textSize="@dimen/textSize"
+            app:layout_constraintStart_toStartOf="@+id/prmtUnitName"
+            app:layout_constraintTop_toBottomOf="@+id/prmtUnitName" />
+
+        <TextView
+            android:id="@+id/spnUnitType"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:textSize="@dimen/textSize"
+            app:layout_constraintBottom_toBottomOf="@+id/prmtType"
+            app:layout_constraintStart_toEndOf="@+id/prmtType"
+            app:layout_constraintTop_toTopOf="@+id/prmtType"
+            tools:text="House" />
+
+        <TextView
+            android:id="@+id/prmtAddress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/prmtAddress"
+            android:textSize="@dimen/textSize"
+            app:layout_constraintStart_toStartOf="@+id/prmtUnitName"
+            app:layout_constraintTop_toBottomOf="@+id/prmtType" />
+
+        <TextView
+            android:id="@+id/txtUnitAddress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/textSize"
+            app:layout_constraintStart_toStartOf="@+id/prmtAddress"
+            app:layout_constraintTop_toBottomOf="@+id/prmtAddress"
+            tools:text="033 Huels Turnpike, West Sheila, ME" />
+
+        <TextView
+            android:id="@+id/prmtBeds"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/prmtBeds"
+            android:textSize="@dimen/textSize"
+            app:layout_constraintStart_toStartOf="@+id/txtUnitAddress"
+            app:layout_constraintTop_toBottomOf="@+id/txtUnitAddress" />
+
+        <TextView
+            android:id="@+id/txtUnitBeds"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:textSize="@dimen/textSize"
+            app:layout_constraintBottom_toBottomOf="@+id/prmtBeds"
+            app:layout_constraintStart_toEndOf="@+id/prmtBeds"
+            app:layout_constraintTop_toTopOf="@+id/prmtBeds"
+            tools:text="4" />
+
+        <TextView
+            android:id="@+id/txtUnitBaths"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:textSize="@dimen/textSize"
+            app:layout_constraintBottom_toBottomOf="@+id/prmtBaths"
+            app:layout_constraintStart_toEndOf="@+id/prmtBaths"
+            app:layout_constraintTop_toTopOf="@+id/prmtBaths"
+            tools:text="2.5" />
+
+        <TextView
+            android:id="@+id/prmtBaths"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/prmtBaths"
+            android:textSize="@dimen/textSize"
+            app:layout_constraintStart_toStartOf="@+id/prmtBeds"
+            app:layout_constraintTop_toBottomOf="@+id/prmtBeds" />
+
+        <TextView
+            android:id="@+id/prmtRentDue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/prmtRentDueOn"
+            android:textSize="@dimen/textSize"
+            app:layout_constraintStart_toStartOf="@+id/prmtBaths"
+            app:layout_constraintTop_toBottomOf="@+id/prmtBaths" />
+
+        <TextView
+            android:id="@+id/txtRentDue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:textSize="@dimen/textSize"
+            app:layout_constraintBottom_toBottomOf="@+id/prmtRentDue"
+            app:layout_constraintStart_toEndOf="@+id/prmtRentDue"
+            app:layout_constraintTop_toTopOf="@+id/prmtRentDue"
+            tools:text="2nd" />
+
+        <TextView
+            android:id="@+id/prmtRentAmount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/prmtRentAmount"
+            android:textSize="@dimen/textSize"
+            app:layout_constraintStart_toStartOf="@+id/prmtRentDue"
+            app:layout_constraintTop_toBottomOf="@+id/prmtRentDue" />
+
+        <TextView
+            android:id="@+id/txtRentAmount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:textSize="@dimen/textSize"
+            app:layout_constraintBottom_toBottomOf="@+id/prmtRentAmount"
+            app:layout_constraintStart_toEndOf="@+id/prmtRentAmount"
+            app:layout_constraintTop_toTopOf="@+id/prmtRentAmount"
+            tools:text="$2100" />
+
+        <TextView
+            android:id="@+id/prmtYearBuilt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/prmtYearBuilt"
+            android:textSize="@dimen/textSize"
+            app:layout_constraintStart_toStartOf="@+id/prmtRentAmount"
+            app:layout_constraintTop_toBottomOf="@+id/prmtRentAmount" />
+
+        <TextView
+            android:id="@+id/txtYearBuilt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:textSize="@dimen/textSize"
+            app:layout_constraintBottom_toBottomOf="@+id/prmtYearBuilt"
+            app:layout_constraintStart_toEndOf="@+id/prmtYearBuilt"
+            app:layout_constraintTop_toTopOf="@+id/prmtYearBuilt"
+            tools:text="2010" />
+
+        <TextView
+            android:id="@+id/prmtFloorSize"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/prmtFloorSize"
+            android:textSize="@dimen/textSize"
+            app:layout_constraintStart_toStartOf="@+id/prmtYearBuilt"
+            app:layout_constraintTop_toBottomOf="@+id/prmtYearBuilt" />
+
+        <TextView
+            android:id="@+id/txtFloorSize"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:textSize="@dimen/textSize"
+            app:layout_constraintBottom_toBottomOf="@+id/prmtFloorSize"
+            app:layout_constraintStart_toEndOf="@+id/prmtFloorSize"
+            app:layout_constraintTop_toTopOf="@+id/prmtFloorSize"
+            tools:text="1000 sq ft" />
+
+
+        <ViewSwitcher
+            android:id="@+id/switcher"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/prmtFloorSize">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btnSave"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/text_margin"
+                    android:onClick="btnAddTenantOnClick"
+                    android:text="@string/strAddTenant"
+
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+            </LinearLayout>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardUnitTenant"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:layout_marginEnd="8dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?android:attr/selectableItemBackground"
+                app:layout_constraintEnd_toEndOf="parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <com.mikhaellopez.circularimageview.CircularImageView
+                        android:id="@+id/imgLandlordContactPhoto"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginBottom="8dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/unit_placeholder"
+                        app:civ_border="false"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/lblTenantName"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginEnd="8dp"
+                        android:text="@string/lblLandlordNameSample"
+                        android:textSize="18sp"
+                        app:layout_constraintBottom_toBottomOf="@+id/imgLandlordContactPhoto"
+                        app:layout_constraintEnd_toStartOf="@+id/ibtnDeleteTenant"
+                        app:layout_constraintStart_toEndOf="@+id/imgLandlordContactPhoto"
+                        app:layout_constraintTop_toTopOf="@+id/imgLandlordContactPhoto"
+                        tools:text="Rosario Barrows" />
+
+                    <ImageButton
+                        android:id="@+id/ibtnDeleteTenant"
+                        style="@style/IconButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginBottom="8dp"
+                        android:contentDescription="@string/strEditTenantDescription"
+                        android:onClick="ibtnDeleteTenantOnClick"
+                        android:tint="@color/colorSecondary"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/ic_delete_black_24dp" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+        </ViewSwitcher>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>

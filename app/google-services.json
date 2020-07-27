@@ -1,0 +1,63 @@
+{
+  "project_info": {
+    "project_number": "674920655923",
+    "firebase_url": "https://vak-rental-management.firebaseio.com",
+    "project_id": "vak-rental-management",
+    "storage_bucket": "vak-rental-management.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:674920655923:android:be4b4aa11dcf7c27",
+        "android_client_info": {
+          "package_name": "vak.rentalmanagement"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "674920655923-i76dajsu04raja4purmpnu8gvrfkiurf.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "vak.rentalmanagement",
+            "certificate_hash": "1d7f1950c593e9184046fa6a385b09bc337c05cf"
+          }
+        },
+        {
+          "client_id": "674920655923-hfro1sbtuto13b3richn50c7v2oah6f1.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "vak.rentalmanagement",
+            "certificate_hash": "975bcb3b3539cec202634a398d86890bcbc62376"
+          }
+        },
+        {
+          "client_id": "674920655923-eh3mc1pa9fv32shs72b2fvsr77eh8r3j.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyASRuM8vfHUtrFzjsRLrBVEvH5EdYXpfAg"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "674920655923-eh3mc1pa9fv32shs72b2fvsr77eh8r3j.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

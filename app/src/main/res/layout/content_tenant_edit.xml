@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".activities.TenantEditActivity"
+    tools:showIn="@layout/activity_tenant_edit">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.mikhaellopez.circularimageview.CircularImageView
+            android:id="@+id/imgTenantPhoto"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginBottom="32dp"
+            android:contentDescription="@string/descPersonPhoto"
+            android:onClick="imgLandlordPhotoOnClick"
+            android:scaleType="centerCrop"
+            android:src="@drawable/unit_placeholder"
+            app:civ_border="false"
+            app:layout_constraintBottom_toTopOf="@+id/txtTenantFirstName"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/txtTenantFirstName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="@string/txtFirstNameHInt"
+            android:importantForAutofill="no"
+            android:inputType="textCapWords"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toBottomOf="@+id/txtTenantLastName"
+            app:layout_constraintEnd_toStartOf="@+id/txtTenantLastName"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/txtTenantLastName"
+            tools:targetApi="o" />
+
+        <EditText
+            android:id="@+id/txtTenantLastName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:hint="@string/txtLastNameHint"
+            android:importantForAutofill="no"
+            android:inputType="textCapWords"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/txtTenantFirstName"
+            app:layout_constraintTop_toBottomOf="@+id/imgTenantPhoto"
+            tools:targetApi="o" />
+
+        <LinearLayout
+            android:id="@+id/layMobile"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/horizontalLine1">
+
+            <TextView
+                android:id="@+id/prmtFloorSize"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/text_margin"
+                android:text="@string/strMobile"
+                android:textSize="@dimen/textSize" />
+
+            <EditText
+                android:id="@+id/txtMobilePhone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/text_margin"
+                android:hint="@string/strPhoneNumberHInt"
+                android:importantForAutofill="no"
+                android:inputType="phone"
+                android:textSize="@dimen/textSize"
+                tools:targetApi="o" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/layEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toBottomOf="@id/horizontalLine3"
+            app:layout_constraintBottom_toTopOf="@id/horizontalLine2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/text_margin"
+                android:text="@string/strEmail"
+                android:textSize="@dimen/textSize" />
+
+            <EditText
+                android:id="@+id/lblEmail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/text_margin"
+                android:hint="@string/strEmailAddressHInt"
+                android:importantForAutofill="no"
+                android:inputType="textEmailAddress"
+                android:textSize="@dimen/textSize"
+                tools:targetApi="o" />
+
+        </LinearLayout>
+
+        <View
+            android:id="@+id/horizontalLine1"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="16dp"
+            android:background="@color/browser_actions_title_color"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtTenantLastName" />
+
+        <View
+            android:id="@+id/horizontalLine2"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/browser_actions_title_color"
+            app:layout_constraintBottom_toTopOf="@id/btnSave"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/layEmail" />
+
+        <View
+            android:id="@+id/horizontalLine3"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginStart="96dp"
+            android:background="@color/browser_actions_title_color"
+            app:layout_constraintBottom_toTopOf="@id/layEmail"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/layMobile" />
+
+
+        <Button
+            android:id="@+id/btnSave"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:background="@color/colorPrimary"
+            android:onClick="btnSaveOnClick"
+            android:text="@string/strSave2"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/horizontalLine2" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
